@@ -1,4 +1,6 @@
-*.Mjpeg
+*.jpg
+.idea/
+tmp_env/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

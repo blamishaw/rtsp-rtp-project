@@ -123,8 +123,8 @@ class ServerWorker:
 					address = self.clientInfo['rtspSocket'][1][0]
 					port = int(self.clientInfo['rtpPort'])
 					self.clientInfo['rtpSocket'].sendto(self.makeRtp(data, frameNumber),(address,port))
-				except:
-					print("Connection Error")
+				except Exception as e:
+					print(f"Connection Error: {e}")
 					#print('-'*60)
 					#traceback.print_exc(file=sys.stdout)
 					#print('-'*60)
@@ -138,7 +138,7 @@ class ServerWorker:
 		marker = 0
 		pt = 26 # MJPEG type
 		seqnum = frameNbr
-		ssrc = 0 
+		ssrc = 1234
 		
 		rtpPacket = RtpPacket()
 		
